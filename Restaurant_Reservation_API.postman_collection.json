@@ -1,0 +1,169 @@
+{
+    "info": {
+        "name": "Restaurant Reservation API",
+        "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+        {
+            "name": "Register User",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"name\": \"george\",\n    \"email\": \"george2@example.com\",\n    \"password\": \"1234\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/api/register",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "register"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Login User",
+            "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"email\": \"george2@example.com\",\n    \"password\": \"1234\"\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/api/login",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "login"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Create Reservation",
+            "request": {
+                "method": "POST",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <your_token_here>"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"restaurant_id\": 1,\n    \"reservation_date\": \"2025-05-17\",\n    \"reservation_time\": \"20:00:00\",\n    \"people_count\": 4\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/api/reservations",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "reservations"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Get User Reservations",
+            "request": {
+                "method": "GET",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <your_token_here>"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:5000/api/user/reservations",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "user",
+                        "reservations"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Update Reservation",
+            "request": {
+                "method": "PUT",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <your_token_here>"
+                    },
+                    {
+                        "key": "Content-Type",
+                        "value": "application/json"
+                    }
+                ],
+                "body": {
+                    "mode": "raw",
+                    "raw": "{\n    \"restaurant_id\": 1,\n    \"reservation_date\": \"2025-05-17\",\n    \"reservation_time\": \"20:00:00\",\n    \"people_count\": 4\n}"
+                },
+                "url": {
+                    "raw": "http://localhost:5000/api/reservations/6",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "reservations",
+                        "6"
+                    ]
+                }
+            }
+        },
+        {
+            "name": "Delete Reservation",
+            "request": {
+                "method": "DELETE",
+                "header": [
+                    {
+                        "key": "Authorization",
+                        "value": "Bearer <your_token_here>"
+                    }
+                ],
+                "url": {
+                    "raw": "http://localhost:5000/api/reservations/6",
+                    "protocol": "http",
+                    "host": [
+                        "localhost"
+                    ],
+                    "port": "5000",
+                    "path": [
+                        "api",
+                        "reservations",
+                        "6"
+                    ]
+                }
+            }
+        }
+    ]
+}
